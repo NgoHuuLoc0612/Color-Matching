@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Matching Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Color Matching Game</h1>
+            <div class="game-info">
+                <div class="info-item">
+                    <span class="label">Score:</span>
+                    <span id="score">0</span>
+                </div>
+                <div class="info-item">
+                    <span class="label">Moves:</span>
+                    <span id="moves">0</span>
+                </div>
+                <div class="info-item">
+                    <span class="label">Time:</span>
+                    <span id="timer">00:00</span>
+                </div>
+            </div>
+        </header>
+
+        <div class="game-controls">
+            <div class="difficulty-selector">
+                <label for="difficulty">Difficulty:</label>
+                <select id="difficulty">
+                    <option value="easy">Easy (4x4)</option>
+                    <option value="medium">Medium (6x6)</option>
+                    <option value="hard">Hard (8x8)</option>
+                </select>
+            </div>
+            <button id="new-game-btn" class="btn btn-primary">New Game</button>
+            <button id="pause-btn" class="btn btn-secondary">Pause</button>
+        </div>
+
+        <div class="game-container">
+            <div id="game-board" class="game-board"></div>
+            
+            <div id="game-over-modal" class="modal hidden">
+                <div class="modal-content">
+                    <h2>Congratulations!</h2>
+                    <div class="game-stats">
+                        <p>Game Complete!</p>
+                        <p>Final Score: <span id="final-score">0</span></p>
+                        <p>Total Moves: <span id="final-moves">0</span></p>
+                        <p>Time: <span id="final-time">00:00</span></p>
+                        <p>Difficulty: <span id="final-difficulty">Easy</span></p>
+                    </div>
+                    <div class="modal-buttons">
+                        <button id="play-again-btn" class="btn btn-primary">Play Again</button>
+                        <button id="close-modal-btn" class="btn btn-secondary">Close</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="pause-modal" class="modal hidden">
+                <div class="modal-content">
+                    <h2>Game Paused</h2>
+                    <p>Click Resume to continue playing</p>
+                    <div class="modal-buttons">
+                        <button id="resume-btn" class="btn btn-primary">Resume</button>
+                        <button id="quit-btn" class="btn btn-secondary">Quit Game</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="game-instructions">
+            <h3>How to Play:</h3>
+            <ul>
+                <li>Click on cards to flip them and reveal colors</li>
+                <li>Match two cards of the same color to keep them revealed</li>
+                <li>Try to match all pairs in the fewest moves possible</li>
+                <li>Higher difficulty levels have more cards and better scoring</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
